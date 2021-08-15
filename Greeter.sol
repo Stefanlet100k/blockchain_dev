@@ -1,14 +1,17 @@
-pragma solidity ^0.7.4;
+pragma solidity ^0.4.21;
 
-contract HelloWorld{
+contract Greeter {
+    string public greeting;
     
-    string private message = "Hello World!!!";
-    
-    function getMessage() public view returns(string memory){
-        return message;
+    function greeter() public {
+        greeting = 'Hello';
     }
     
-    function setMessage(string memory _message) public {
-        message = _message;
+    function setGreeting(string _greeting) public {
+        greeting = _greeting;
+    }
+    
+    function greet() view public returns (string) {
+        return greeting;
     }
 }
